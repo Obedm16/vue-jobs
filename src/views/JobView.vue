@@ -121,7 +121,8 @@ const deleteJob = async () => {
 
 onMounted(async () => {
   try {
-    const res = await axios.get(`/api/jobs/${jobId}`);
+    // const res = await axios.get(`/api/jobs/${jobId}`); only when using local server
+    const res = await axios.get(`https://my-json-server.typicode.com/Obedm16/jobs-json/jobs/${jobId}`);
     console.log("RES", res.data)
     state.job = res.data;
   } catch (error) {

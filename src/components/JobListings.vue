@@ -35,7 +35,8 @@ import { onMounted, reactive } from 'vue';
 
 onMounted(async () => {
   try {
-    const res = await axios.get('/api/jobs');
+    // const res = await axios.get('/api/jobs'); only when using localhost server
+    const res = await axios.get('https://my-json-server.typicode.com/Obedm16/jobs-json/jobs/');
     state.jobs = res.data;
   } catch (error) {
     console.log('Error fetching jobs', error);
